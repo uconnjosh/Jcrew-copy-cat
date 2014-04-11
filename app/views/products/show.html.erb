@@ -1,0 +1,38 @@
+<h1><%= @product.name %></h1>
+<br />
+<br />
+
+<%= image_tag @product.picture(:medium) %>
+<br />
+<%= @product.description %>
+
+<br />
+<br />
+<%= link_to "<<< Back to Products", products_path, class: "btn btn-primary" %>
+
+<% if current_user %>
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div class="container-fluid">
+
+    <div class="navbar-footer">
+ <br />
+<p class="admin">ADMINISTRATION BAR </p>
+  &nbsp;
+  &nbsp;
+  <%= link_to "Add a new Product", new_product_path %>
+  &nbsp;
+  &nbsp;
+
+ <%= link_to "Remove Product", product_path(@product),
+                                            :confirm => "You Sure? This is permanent!",
+                                            :method => "delete" %>
+
+
+
+<br />
+  </div>
+</div>
+<br />
+
+</nav>
+<% end %>

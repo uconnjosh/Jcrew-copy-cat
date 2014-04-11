@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Ecrews</title>
+  <title>E.Crew</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <div class="container">
 <body>
-
-<%= yield %>
-
-<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
 
-    <div class="navbar-footer">
+
  <br />
-<p class="admin">ADMINISTRATION BAR </p>
+
+<div class="rightSideNav">
   &nbsp;
   &nbsp;
-  <%= link_to "Add a new Product", new_product_path %>
+  <%= link_to "View Cart", products_path %>
+  <img id="cart" src="http://www.clipartbest.com/cliparts/9TR/qa6/9TRqa68Te.png" />
+
+  &nbsp;
+  &nbsp;
+
+</div>
 
 
 
 
-  </div>
+
+
 </div>
 </nav>
+<%= yield %>
+
+
 
 
 </div>

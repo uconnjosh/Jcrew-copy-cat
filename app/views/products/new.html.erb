@@ -4,6 +4,7 @@
 <br />
 
 <%= form_for @product, :url => products_path, :html => { :multipart => true } do |form| %>
+
   <div class="form-group">
   <%= form.label :name, "What is the name of the product?" %>
   <%= form.text_field :name %>
@@ -15,6 +16,10 @@
   <br />
   <%= form.label :description, "Enter the description" %>
   <%= form.text_field :description %>
+  <br />
+  <br />
+  <%= form.label :picture, "Click the button to choose a picture to upload:" %>
+  <%= form.file_field :picture %>
   <br />
   <br />
   <!-- needs to be changed in database from string to text! -->

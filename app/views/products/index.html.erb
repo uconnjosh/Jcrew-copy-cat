@@ -1,8 +1,45 @@
 <h1><div class="nav">E.CREW</div> </h1>
+<div class="ident"><h4>Featured products:</h4></div>
 
 
-<ul>
+<br />
+<br />
+<ul class="list-unstyled">
 <% Product.all.each do |product| %>
-  <li><%= product.name %></li>
+  <li class="photos"><figure class="photos">
+   <%= image_tag product.picture(:medium) %>
+   <figcaption> <%= link_to product.name, product_path(product) %> </figcaption>
+ </li>
+</figure>
   <% end %>
 </ul>
+
+<% if current_user %>
+
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div class="container-fluid">
+
+    <div class="navbar-footer">
+ <br />
+<p class="admin">ADMINISTRATION BAR </p>
+  &nbsp;
+  &nbsp;
+  <%= link_to "Add a new Product", new_product_path %>
+  &nbsp;
+  &nbsp;
+  <%= link_to "Sign Out", session_path("current"), method: "delete" %>
+  &nbsp;
+  &nbsp;
+
+
+
+
+
+<br />
+  </div>
+</div>
+<br />
+
+</nav>
+<% end %>
+</div>
