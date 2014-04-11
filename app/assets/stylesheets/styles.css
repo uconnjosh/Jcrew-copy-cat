@@ -1,5 +1,7 @@
 .nav {
   font-family: 'serif';
+  letter-spacing: 3px;
+  display: inline
 }
 .ident {
   font-family: 'serif';
