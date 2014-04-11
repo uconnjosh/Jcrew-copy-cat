@@ -1,0 +1,8 @@
+<h1><div class="nav">E.CREW</div> </h1>
+
+
+<ul>
+<% Product.all.each do |product| %>
+  <li><%= product.name %></li>
+  <% end %>
+</ul>
