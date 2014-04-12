@@ -46,3 +46,12 @@ a.inlinelinks {
   display: none;
 
 }
+.addCart {
+  float: right;
+  margin-right: 50%;
+  font-weight: bold;
+}
+
+.productPic {
+
+}

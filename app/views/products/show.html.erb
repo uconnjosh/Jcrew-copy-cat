@@ -2,8 +2,16 @@
 <h1><%= @product.name %></h1>
 <br />
 <br />
+<div class="addCart">
+  $<%= @product.price %> &nbsp;
+  <%= link_to "Add To Cart", product_path, class: "btn btn-success" %>
+</div>
+<div class="productPic">
+ <%= image_tag @product.picture(:medium) %>
 
-<%= image_tag @product.picture(:medium) %>
+</div>
+
+
 <br />
 <%= @product.description %>
 
@@ -23,7 +31,9 @@
   <%= link_to "Add a new Product", new_product_path %>
   &nbsp;
   &nbsp;
-
+  <%= link_to "Edit Product", product_path(@product) %>
+  &nbsp;
+  &nbsp;
  <%= link_to "Remove Product", product_path(@product),
                                             :confirm => "You Sure? This is permanent!",
                                             :method => "delete" %>

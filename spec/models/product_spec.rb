@@ -1,7 +1,5 @@
 require 'spec_helper'
 
 describe Product do
-  pending "add some examples to (or delete) #{__FILE__}"
-
-  it { should have_many :carts }
+  it { should belong_to :cart }
 end
