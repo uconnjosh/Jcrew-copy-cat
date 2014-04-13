@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @session_item = Session_item.new
+    @item = Item.new
     last_cart = Cart.all.last
     time_elapsed = Time.now - (last_cart.created_at - 25200)
     if time_elapsed > 100000

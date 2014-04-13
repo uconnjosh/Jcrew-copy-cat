@@ -4,7 +4,7 @@
 <br />
 <div class="addCart">
   $<%= @product.price %> &nbsp;
-<%= form_for @session_item do |f| %>
+<%= form_for @item do |f| %>
  <%= f.hidden_field :cart_id, :value => @cart.id %>
  <%= f.hidden_field :product_id, :value => @product.id %>
   <%= f.submit(:class => "btn btn-success") %>
