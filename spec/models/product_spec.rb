@@ -1,5 +1,5 @@
 require 'spec_helper'
 
 describe Product do
-  it { should belong_to :cart }
+  it { should have_many(:carts).through(:session_items)}
 end

@@ -4,6 +4,7 @@ describe Product do
 	context 'admin log in' do 
 		it 'allows the admin to log in and view admin bar' do 
 			user = create(:user)
+			cart = create(:cart)
 			visit new_session_path
 			fill_in 'Email', with: "admin"
 			fill_in 'Password', with: "admin"

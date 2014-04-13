@@ -10,6 +10,9 @@ FactoryGirl.define do
 		name "bunny"
 		price "25"
 	end
+
+	factory :cart do
+	end
 end
 
 

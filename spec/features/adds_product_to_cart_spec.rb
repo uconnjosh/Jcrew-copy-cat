@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe Product do
-	context 'adding products' do 
-		it 'allows admins to add a product to the store' do 
+	context 'adding products to cart' do 
+		it 'allows customers to add products to their cart' do 
 			user = create(:user)
 			visit new_session_path
 			fill_in 'Email', with: "admin"
@@ -14,7 +14,10 @@ describe Product do
 			fill_in 'Enter the price', with: '10'
 			fill_in 'Enter the description', with: 'tight, and white!'
 			click_button 'Create Product'
-			page.should have_content 'undies'
+			click_link 'undies'
+			page.should have_content 'tight, and white!'
+			click_link 'Add To Cart'
+			page.should have_content 'Your dumb cart:'
 		end
 	end
 end

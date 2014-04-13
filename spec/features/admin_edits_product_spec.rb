@@ -4,6 +4,7 @@ describe Product do
 	context 'editing product' do 
 		it 'allows admins to access edit page' do 
 			user = create(:user)
+			cart = create(:cart)
 			visit new_session_path
 			fill_in 'Email', with: "admin"
 			fill_in 'Password', with: "admin"

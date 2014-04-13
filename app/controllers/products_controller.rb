@@ -1,6 +1,15 @@
 class ProductsController < ApplicationController
   def index
+    last_cart = Cart.all.last
+    time_elapsed = Time.now - (last_cart.created_at - 25200)
+    if time_elapsed > 100000
+      @cart = Cart.create
+    else
+      @cart = last_cart
+    end
+
   end
+
 
   def create
     @product = Product.new(product_params)
@@ -30,6 +39,14 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @session_item = Session_item.new
+    last_cart = Cart.all.last
+    time_elapsed = Time.now - (last_cart.created_at - 25200)
+    if time_elapsed > 100000
+      @cart = Cart.create
+    else
+      @cart = last_cart
+    end  
   end
 
   def destroy

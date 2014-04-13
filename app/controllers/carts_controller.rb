@@ -10,11 +10,11 @@ class CartsController < ApplicationController
   end
 
   def show
-    @cart = Cart.find(params[:id])
+    @cart = Cart.all.last
   end
 
   def destroy
-    @cart = Cart.find(params[:id])
+    @cart = Cart.all.last
     @cart.delete
     redirect_to("/products")
   end

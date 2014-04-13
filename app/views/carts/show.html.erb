@@ -1,0 +1,9 @@
+<h1>Your dumb cart:</h1>
+<br />
+<%= @cart.id %>
+
+<ul>
+<%= @cart.products.each do |product| %>
+	<li><%= product.name %></li>
+<% end %>
+</ul>
