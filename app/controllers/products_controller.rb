@@ -15,6 +15,19 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+      if @product.update_attributes(product_params)
+        redirect_to products_path
+      else 
+       render 'edit'
+     end
+   end
+
   def show
     @product = Product.find(params[:id])
   end
@@ -28,6 +41,6 @@ class ProductsController < ApplicationController
 private
 
   def product_params
-    params.require(:product).permit(:name, :price, :description, :category_id, :picture)
+    params.require(:product).permit(:name, :price, :description, :category_id, :picture, :cart_id)
   end
 end

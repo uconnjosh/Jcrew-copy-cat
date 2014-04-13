@@ -1,7 +1,5 @@
-<h1>Add a product</h1>
-
-<br />
-<br />
+<h3>Update Product</h3>
+<h5 class="indent"><%= @product.name %></h5>
 
 <%= form_for @product, :html => { :multipart => true } do |form| %>
 
@@ -22,9 +20,8 @@
   <%= form.file_field :picture %>
   <br />
   <br />
-  <!-- needs to be changed in database from string to text! -->
+
   <%= form.submit(:class => "btn btn-primary") %>
 </div>
-</form>
-</div>
 <% end %>
+</div>
