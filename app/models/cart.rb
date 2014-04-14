@@ -9,4 +9,9 @@ class Cart < ActiveRecord::Base
   	end
   	sum
   end
+
+  def remove_item(item)
+  	products.remove(item)
+  end
+
 end
