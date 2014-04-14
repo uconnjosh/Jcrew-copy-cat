@@ -55,3 +55,7 @@ a.inlinelinks {
 .productPic {
 
 }
+p.cart {
+  color: blue;
+  display: inline;
+}
