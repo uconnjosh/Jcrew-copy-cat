@@ -6,7 +6,7 @@ describe Cart do
 			cart = create(:cart)
 			visit root_path
 			click_link 'View Cart'
-			page.should have_content "Your Dumb Cart:"
+			page.should have_content "Your dumb cart:"
 		end
 	end
 end

@@ -4,18 +4,15 @@
 <br />
 <div class="addCart">
   $<%= @product.price %> &nbsp;
-<%= form_for @item do |f| %>
- <%= f.hidden_field :cart_id, :value => @cart.id %>
- <%= f.hidden_field :product_id, :value => @product.id %>
-  <%= f.submit(:class => "btn btn-success") %>
+  <%= form_for @item do |f| %>
+    <%= f.hidden_field :cart_id, :value => @cart.id %>
+    <%= f.hidden_field :product_id, :value => @product.id %>
+    <%= f.submit"Add to Cart", :class => "btn btn-success" %>
   <% end %>
 </div>
 <div class="productPic">
- <%= image_tag @product.picture(:medium) %>
-
+   <%= image_tag @product.picture(:medium) %>
 </div>
-
-
 <br />
 <%= @product.description %>
 
@@ -24,12 +21,12 @@
 <%= link_to "<<< Back to Products", products_path, class: "btn btn-primary" %>
 
 <% if current_user %>
-<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
-  <div class="container-fluid">
+  <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="container-fluid">
 
     <div class="navbar-footer">
- <br />
-<p class="admin">ADMINISTRATION BAR </p>
+  <br />
+  <p class="admin">ADMINISTRATION BAR </p>
   &nbsp;
   &nbsp;
   <%= link_to "Add a new Product", new_product_path %>
@@ -42,12 +39,10 @@
                                             :confirm => "You Sure? This is permanent!",
                                             :method => "delete" %>
 
-
-
-<br />
+  <br />
   </div>
-</div>
-<br />
+  </div>
+  <br />
+  </nav>
 
-</nav>
 <% end %>

@@ -12,6 +12,13 @@ class ProductsController < ApplicationController
 
 
   def create
+    last_cart = Cart.all.last
+    time_elapsed = Time.now - (last_cart.created_at - 25200)
+    if time_elapsed > 100000
+      @cart = Cart.create
+    else
+      @cart = last_cart
+    end
     @product = Product.new(product_params)
     if @product.save
       redirect_to products_path, notice: "Added the product!"
@@ -21,10 +28,24 @@ class ProductsController < ApplicationController
   end
 
   def new
+    last_cart = Cart.all.last
+    time_elapsed = Time.now - (last_cart.created_at - 25200)
+    if time_elapsed > 100000
+      @cart = Cart.create
+    else
+      @cart = last_cart
+    end
     @product = Product.new
   end
 
   def edit
+    last_cart = Cart.all.last
+    time_elapsed = Time.now - (last_cart.created_at - 25200)
+    if time_elapsed > 100000
+      @cart = Cart.create
+    else
+      @cart = last_cart
+    end
     @product = Product.find(params[:id])
   end
 

@@ -12,6 +12,5 @@ private
 
   def item_params
     params.require(:item).permit(:cart_id, :product_id)
-
   end
 end

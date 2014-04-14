@@ -11,7 +11,13 @@ private
   end
   
   def current_cart
-    @cart = Cart.all.last
+    last_cart = Cart.all.last
+    time_elapsed = Time.now - (last_cart.created_at - 25200)
+    if time_elapsed > 100000
+      @cart = Cart.create
+    else
+      @cart = last_cart
+    end
   end
   helper_method :current_user
   helper_method :current_cart
